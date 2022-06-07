@@ -89,4 +89,5 @@ jobs:
           project-file-path: src/Bootstrapper/Bootstrapper.csproj
           version: ${{ needs.calculate-version.outputs.version }}
           tag-commit: false
+          nuget-source: https://api.nuget.org/v3/index.json
           nuget-key: ${{secrets.NUGET_API_KEY}}
