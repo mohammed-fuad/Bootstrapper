@@ -1,0 +1,25 @@
+<Project>
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)src\_stylecop\stylecop.ruleset</CodeAnalysisRuleSet>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <NoWarn>CS1587,CS1591,CS1998,NU5105</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!--        <PackageReference Include="MinVer" Version="3.1.0" PrivateAssets="All"/>-->
+        <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.333">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)src\_stylecop\stylecop.json">
+            <Link>stylecop.json</Link>
+        </AdditionalFiles>
+    </ItemGroup>
+
+</Project>

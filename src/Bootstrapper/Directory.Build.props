@@ -1,0 +1,28 @@
+<Project>
+
+  <Import Project="..\..\Directory.Build.props"/>
+
+  <PropertyGroup>
+    <Product>Bootstapper</Product>
+    <Copyright>Copyright 2022 mohammed-fuad</Copyright>
+    <Authors>Mohammed Fuad</Authors>
+    <NoWarn>$(NoWarn)</NoWarn>
+    <PackageVersion>1.0.0</PackageVersion>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/mohammed-fuad/Boostrapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mohammed-fuad/Boostrapper</RepositoryUrl>
+    <PackageTags>Bootstrapper;MicroService;DependencyInjection</PackageTags>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>Bootstrapper is a standard library to bootstrap registered implementations into main DependencyInjection container.</Description>
+    <IsPackable>True</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE.txt" Pack="true" PackagePath="LICENSE.txt"/>
+  </ItemGroup>
+
+</Project>
