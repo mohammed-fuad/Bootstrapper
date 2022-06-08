@@ -14,12 +14,12 @@ on:
     #   - "*.*.*"
     branches:
       - master
-  pull_request:
-    paths:
-      - 'src/**'
-      - 'test/**'
-      - 'Directory.Build.props'
-      - '**/build.yml'
+  # pull_request:
+  #   paths:
+  #     - 'src/**'
+  #     - 'test/**'
+  #     - 'Directory.Build.props'
+  #     - '**/build.yml'
   workflow_dispatch:
 
 jobs:
@@ -67,27 +67,31 @@ jobs:
     name: Build and Publish NuGets
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' && success()
+    # if: github.ref == 'refs/heads/master' && success()
     needs:
       - calculate-version
     steps:
       - name: Version Output Check
         run: |
           echo "${{ needs.calculate-version.outputs.version }}"
-
       - name: Check out code
         uses: actions/checkout@v2
-
       - name: Install .NET Core SDK
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
-
-      - name: Build and Publish Bootstrapper
-        uses: drusellers/publish-nuget@master
+      - name: Clean
+        run: dotnet clean --configuration Release
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      - name: Test
+        run: dotnet test --configuration Release --no-restore --no-build -l trx --verbosity normal
+      - name: Pack
+        run: dotnet pack --no-build --configuration Release .\src\Bootstrapper\Bootstrapper.csproj --output .\artifacts
+      - name: PushNuget
+        run: dotnet nuget push *.nupkg --source ${{secrets.NUGET_API_URL}} --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
+      - name: Artifacts
+        uses: actions/upload-artifact@v2
         with:
-          project-file-path: src/Bootstrapper/Bootstrapper.csproj
-          version: ${{ needs.calculate-version.outputs.version }}
-          tag-commit: false
-          nuget-source: https://api.nuget.org/v3/index.json
-          nuget-key: ${{secrets.NUGET_API_KEY}}
+          name: artifacts
+          path: artifacts/**/*
