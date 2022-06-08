@@ -3,7 +3,7 @@
   <Import Project="..\..\Directory.Build.props"/>
 
   <PropertyGroup>
-    <Product>Bootstapper</Product>
+    <Product>Bootstapper.Extensions.Microsoft.DependencyInjection</Product>
     <Copyright>Copyright 2022 mohammed-fuad</Copyright>
     <Authors>Mohammed Fuad</Authors>
     <NoWarn>$(NoWarn)</NoWarn>

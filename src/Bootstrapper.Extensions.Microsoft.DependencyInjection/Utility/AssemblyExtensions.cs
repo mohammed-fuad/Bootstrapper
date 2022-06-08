@@ -1,4 +1,4 @@
-namespace Bootstrapper.Utility;
+namespace Bootstrapper.Extensions.Microsoft.DependencyInjection.Utility;
 
 using System.Reflection;
 

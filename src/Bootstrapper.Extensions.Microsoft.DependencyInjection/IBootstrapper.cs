@@ -1,7 +1,7 @@
-namespace Bootstrapper;
+namespace Bootstrapper.Extensions.Microsoft.DependencyInjection;
 
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using global::Microsoft.Extensions.Configuration;
+using global::Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
 ///     Bootstrapper interface to collect registered implementations and bootstrap them into the main DI container.

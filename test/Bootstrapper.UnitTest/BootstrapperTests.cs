@@ -1,5 +1,6 @@
 namespace Bootstrapper.UnitTest;
 
+using Extensions.Microsoft.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
