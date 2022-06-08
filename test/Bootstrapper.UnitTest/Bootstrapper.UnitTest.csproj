@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Bootstrapper\Bootstrapper.csproj" />
+    <ProjectReference Include="..\..\src\Bootstrapper.Extensions.Microsoft.DependencyInjection\Bootstrapper.Extensions.Microsoft.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

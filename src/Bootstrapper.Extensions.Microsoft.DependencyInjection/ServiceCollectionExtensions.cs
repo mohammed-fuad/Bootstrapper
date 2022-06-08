@@ -3,8 +3,8 @@
 namespace Microsoft.Extensions.Hosting;
 
 using System.Reflection;
-using Bootstrapper;
-using Bootstrapper.Utility;
+using Bootstrapper.Extensions.Microsoft.DependencyInjection;
+using Bootstrapper.Extensions.Microsoft.DependencyInjection.Utility;
 using Configuration;
 using DependencyInjection;
 
