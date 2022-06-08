@@ -25,8 +25,8 @@ jobs:
     timeout-minutes: 60
     strategy:
     # max-parallel: 2
-    matrix: 
-      os: ['ubuntu-latest']
+      matrix: 
+        os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
     # if: github.ref == 'refs/heads/master' && success()
     steps:
