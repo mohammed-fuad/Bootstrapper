@@ -87,7 +87,7 @@ jobs:
       - name: Test
         run: dotnet test --configuration Release --no-restore --no-build -l trx --verbosity normal
       - name: Pack
-        run: dotnet pack --no-build --configuration Release --output .\artifacts
+        run: dotnet pack --no-build --configuration Release --output ./artifacts
       - name: PushNuget
         run: dotnet nuget push *.nupkg --source ${{secrets.NUGET_API_URL}} --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
       - name: Artifacts
