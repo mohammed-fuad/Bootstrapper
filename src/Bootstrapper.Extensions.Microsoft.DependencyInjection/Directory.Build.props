@@ -7,13 +7,14 @@
     <Copyright>Copyright 2022 mohammed-fuad</Copyright>
     <Authors>Mohammed Fuad</Authors>
     <NoWarn>$(NoWarn)</NoWarn>
-    <PackageVersion>1.0.0</PackageVersion>
+    <PackageVersion>1.0.1</PackageVersion>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/mohammed-fuad/Bootstrapper</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mohammed-fuad/Bootstrapper</RepositoryUrl>
     <PackageTags>Bootstrapper;MicroService;DependencyInjection</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Description>Bootstrapper is a standard library to bootstrap registered implementations into main DependencyInjection container.</Description>
+    <PackageReleaseNotes>Correct project url</PackageReleaseNotes>
     <IsPackable>True</IsPackable>
   </PropertyGroup>
 
