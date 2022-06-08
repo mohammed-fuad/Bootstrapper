@@ -1,10 +1,10 @@
-# Boostrapper
+# Bootstrapper.Extensions.Microsoft.DependencyInjection
 Is .net standard library as a solution to bootstrap implementations and register them into `Dependency Injection Container`.
 
 ## Installation
 
 ```powershell
-PM > Install-Package Boostrapper
+PM > Install-Package Bootstrapper.Extensions.Microsoft.DependencyInjection
 ```
 
 ## How to Use?
@@ -34,7 +34,7 @@ There are two options to bootstrap inside Program.cs:
 
 ```c#
 using System.Reflection;
-using Bootstrapper;
+using Bootstrapper.Extensions.Microsoft.DependencyInjection;
 
 //....
 
@@ -49,7 +49,7 @@ builder.Services.Bootstrap(builder.Configuration);
 
 ```c#
 using System.Reflection;
-using Bootstrapper;
+using Bootstrapper.Extensions.Microsoft.DependencyInjection;
 
 //....
 
