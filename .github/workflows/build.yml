@@ -11,12 +11,12 @@ on:
     #   - "*.*.*"
     branches:
       - master
-  # pull_request:
-  #   paths:
-  #     - 'src/**'
-  #     - 'test/**'
-  #     - 'Directory.Build.props'
-  #     - '**/build.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'test/**'
+      - 'Directory.Build.props'
+      - '**/build.yml'
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       matrix: 
         os: ['ubuntu-latest']
     runs-on: ${{ matrix.os }}
-    # if: github.ref == 'refs/heads/master' && success()
+    if: github.ref == 'refs/heads/master' && success()
     steps:
       - name: Check out code
         uses: actions/checkout@v2
